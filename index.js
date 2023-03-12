@@ -1,12 +1,12 @@
 const express = require('express')
+const routes = require('./src/routers/route')
+require('./src/dbConnect/connect')
+
 const app = express()
 
+app.use(routes)
 
 
-app.get('/', (req,res) => {
-    res.send('Hello world')
-})
-
-app.listen('3001', () => {
+app.listen('3002', () => {
     console.log("Server has been started")
 })
